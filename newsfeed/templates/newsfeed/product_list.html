@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>product list</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional Bootstrap theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    </head>
+    <body>
+        <h1>Products</h1>
+        <div class="row">
+            <div class="col-sm-1"><p>SKU</p></div>
+            <div class="col-sm-1"><p>L1:</p></div>
+            <div class="col-sm-1"><p>L2:</p></div>
+            <div class="col-sm-1"><p>L3:</p></div>
+            <div class="col-sm-2"><p>Name:</p></div>
+            <div class="col-sm-1"><p>Brand:</p></div>
+            <div class="col-sm-4"><p>URL:</p></div>
+            <div class="col-sm-1"><p>Datum:</p></div>
+            <div class="col-sm-1"><p>Bild:</p></div>
+        </div>
+        {% for product in products %}
+        <div class="row">
+            <div class="col-sm-1"><p>{{ product.sku }}</p></div>
+            <div class="col-sm-1"><p>{{ product.l1_category }}</p></div>
+            <div class="col-sm-1"><p>{{ product.l2_category }}</p></div>
+            <div class="col-sm-1"><p>{{ product.l3_category }}</p></div>
+            <div class="col-sm-2"><p>{{ product.product_name_de }}</p></div>
+            <div class="col-sm-1"><p>{{ product.product_brand_name}}</p></div>
+            <div class="col-sm-3"><p><a href="{{ product.url }}">{{ product.url }}</a></p></div>
+            <div class="col-sm-1"><p>{{ product.date_added }}</p></div>
+            <div class="col-sm-1"><p>{{ product.img }}</p></div>
+        </div>
+        {% empty %}
+        <li>No articles yet.</li>
+        {% endfor %}
+<!--
+        <ul>
+        {% for product in products %}
+            <li>SKU: {{ product.sku }}</li>
+            <li>L1: {{ product.l1_category }}</li>
+            <li>L2: {{ product.l2_category }}</li>
+            <li>L3: {{ product.l3_category }}</li>
+            <li>Brand: {{ product.product_brand_name}}</li>
+            <li>Name: {{ product.product_name_de }}</li>
+            <li>URL: <a href="{{ product.url }}">{{ product.url }}</a></li>
+            <li>Date: {{ product.date_added }}</li>
+        {% empty %}
+            <li>No articles yet.</li>
+        {% endfor %}
+        </ul>
+-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
+</html>

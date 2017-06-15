@@ -1,7 +1,8 @@
 from django.conf.urls import url
-from . import views
+
+from .views import ProductListView
 
 urlpatterns = [
-    url(r'^$', views.post_list, name='post_list'),
+    url(r'^$', ProductListView.as_view(), name='newsfeed-list'),
 ]
 
